@@ -88,6 +88,8 @@ window.App = {
         var self = this;
         var key = document.getElementById("key").value;
         console.log("address...>>>" +key);
+        var fname =  document.getElementById("myname").value;
+        console.log("address...>>>" +fname);
      
         var manAddrs = document.getElementById("words").value;
         console.log("Coinreciever:------>" + manAddrs);
@@ -107,13 +109,13 @@ window.App = {
         var name = document.getElementById("myFile").value;
         console.log("doc" +name);
         
-        
+        var updateString=[fname,manAddrs,venAddrs,tot]
         // updateString.toString();
-      
+        console.log("lol-------->",updateString);
         var rapid;
         SmartCurrency.deployed().then(function(instance) {
             rapid = instance;
-            return rapid.StoreDocument(key.toString(),name.toString(),manAddrs.toString(),venAddrs.toString(),tot.toString(),{
+            return rapid.StoreDocument(key.toString(),name.toString(),updateString.toString(),{
                 from: account
             });
        }).then(function(value) {
@@ -195,7 +197,24 @@ getStatus: function(){
         print.innerHTML = value.toString();
         console.log("print",print.innerHTML);
 
+        var dateArray = print.innerHTML.split(',');
+        console.log(dateArray);
+        $('#printbox').html($(dateArray[0]))
+        var docs = dateArray[0];
+        document.getElementById("docs").innerHTML = docs;
+        var name = dateArray[1];
+        document.getElementById("name").innerHTML = name;
+        var manAddrs = dateArray[2];
+        document.getElementById("manAddrs").innerHTML = manAddrs;
+        var venAddrs = dateArray[3];
+        document.getElementById("venAddrs").innerHTML = venAddrs;
+        var tot = dateArray[4];
+        document.getElementById("tot").innerHTML = tot;
+        console.log(name);
+        console.log(manAddrs);
+        console.log(venAddrs);
 
+     
     }).catch(function(e) {
         console.log(e);
         self.setStatus("Error getting balance; see log.");

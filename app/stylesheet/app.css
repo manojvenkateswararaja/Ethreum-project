@@ -67,23 +67,23 @@ td {font-size:12px;border-width: 1px;padding: 8px;border-style: solid;border-col
 table{
   
       border: 1px solid lightblue;
-    width:"100%";
-    margin-top: 100px; 
-
-   
+    /* width:"100%"; */
+    margin: 0px auto;
+    margin-top: 100px;   
 }
+
 th{
    border-right-width:medium;
    border-right-color:#000;
    border-right-style:groove;
    width: 25%;
+   
 }
 label{
    display: inline-block;
    clear: left;
    width: 250px;
   margin-bottom: 20px;
-   text-align: right;
 }
 input {
  display: inline-block;
@@ -136,10 +136,13 @@ input[type=file] {
    padding: 71px 0 65px 0;
    position: relative;
 }
-container {
+.container {
    position: relative;
    text-align: center;
-   color:skyblue;
+   width: 960px;
+   margin: 0 auto; 
+   height:1020px;
+   color:black;
 }
 .parent {
    display: table;
@@ -164,7 +167,7 @@ input[type=password]:focus {
 .container1{
     width: 960px;
     background: skyblue;
-    height:250px;
+    height:100%;
     margin: 0 auto;
     border-width:1px;
     border-color:black;
@@ -174,3 +177,17 @@ input[type=password]:focus {
    text-align: center;
    color:skyblue;
 }
+.containerdemo {
+   
+    /* background-color: skyblue;  
+   padding: 30px;
+   height: 150px;
+   border: 1px solid black; */
+   width: 500px;
+   background: skyblue;
+   height:250px;
+   margin: 0 auto;
+   border-width:1px;
+   border-color:black;
+   text-align:left;
+ }  
