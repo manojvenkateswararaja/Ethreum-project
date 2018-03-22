@@ -38,9 +38,9 @@
             </span>
         </h3>
         <h3><span id="getStatus"></h3>
-                                                                              <label>Identity</label>
-                                                                              <input class="form-control "type = "text" style="width:150px"  id = "mykey"></input>
-                                                                             <br>
+       <label>Identity</label>
+       <input class="form-control "type = "text" style="width:150px"  id = "mykey"></input>
+      <br>
                                                                              <br>
                                                                              <div class="wrapper">
                                                                              <button class="btn btn-primary" id="send" onclick="App.getStatus()">Submit</button>
@@ -53,31 +53,32 @@
 
             <body onload="getStatus">
                 
-                    <label align="center"> Name:<div id="name"></div></label>
-                    <input class="form-control "type = "text" style="width:150px" id = "myname"></input>
+                    <label align="center"> Name: </label>
+                    <textfield class="form-control"  id = "name" style="width:150px"  ></textfield>
                    <br>
                    
                    
                    <div class="inline-div">
                         <p align="left">Manufacturer Address:</p> <br>
-                        <textarea id="manAddrs" cols="15" rows="15" class="inline-txtarea"> </textarea> 
+                        <textfield class="form-control" id="manAddrs" cols="15" rows="15"> </textfield> 
                         <!-- <input type="button" onclick="getwords()" value="Enter" /> <br>
                         <p id="para"></p> -->
                     </div> 
                     <div class="inline-div">
                             <p align="right">Vendor Address: </p> <br>
-                                <textarea id="venAddrs"cols="15" rows="15" class="inline-txtarea"></textarea>
+                                <textfield class="form-control" id="venAddrs"cols="15" rows="15" class="inline-txtarea"></textfield>
                             </div> <br>
                             <br>
 
                             <label>  Document:
                             </label>
-                    <input class="form-control" type = "text" id = "docs" style="width:150px"  ></input>
+                    <textfield class="form-control" id = "docs" style="width:150px"  ></textfield>
                    <br>
 
-                   <label>  Total:<div id="tot"></div>
+                   <label>  Total:
                    </label>
-           <input class="form-control "type = "text" style="width:150px"  id = "tot"></input>
+                   <textfield class="form-control" id = "tot" style="width:150px"  ></textfield>
+        
           
                          
                   <table id="myTable">
