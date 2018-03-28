@@ -132,11 +132,56 @@ window.App = {
     
 
 
+    RegDetails:function(){
+        var self = this;
+        var fname = document.getElementById("fname").value;
+        console.log("address...>>>" +fname);
+        var lname =  document.getElementById("lname").value;
+        console.log("address...>>>" +lname);
+        var email_id = document.getElementById("email_id").value;
+        console.log("lol----",email_id)
+        var phno = document.getElementById("phno").value;
+        console.log("Coinreciever:------>" + phno);
+        var pass = document.getElementById("pass").value;
+        console.log("lol----",pass)
+        var repass =(document.getElementById("repass").value);
+        console.log("lol----",repass)
+
+        var usertype = (document.getElementById("usertype").value);
+        console.log("Coinreciever:------>" + usertype);
+
+        
+        var updateString=[fname,manAddrs,venAddrs,tot]
+        // updateString.toString();
+        console.log("lol-------->",updateString);
+        var rapid;
+        SmartCurrency.deployed().then(function(instance) {
+            rapid = instance;
+            return rapid.StoreDocument(key.toString(),name.toString(),updateString.toString(),{
+                from: account
+            });
+       }).then(function(value) {
+
+                        self.setStatus("Transaction complete!");
+                        console.log("data stored")
+                        
+            
+                    }).catch(function(e) {
+                        console.log(e);
+                        self.setStatus("Error Approving transaction due to insufficient Balance");
+                    });
+    },
+    
+
+
+ 
+
  
     myFunction: function() {
         var self = this;
         var key = document.getElementById("mykey").value;
         console.log("address...>>>" +key);
+        
         // var balance = new BigNumber(key);
         // console.log(balance);
 // or var balance = web3.eth.getBalance(someAddress);
@@ -195,7 +240,7 @@ getStatus: function(){
     }).then(function(value) {
         var print = document.getElementById("getStatus");
         print.innerHTML = value.toString();
-        console.log("print",print.innerHTML);
+        // console.log("print",print.innerHTML);
 
         var dateArray = print.innerHTML.split(',');
         console.log(dateArray);
