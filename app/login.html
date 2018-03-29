@@ -24,6 +24,51 @@
 
 </head>
 
+
+<script type='text/javascript'>
+  function login() {
+
+  
+      var email = document.getElementById("email").value;
+      console.log("lol----"+email)
+      var password = document.getElementById("password").value;
+      console.log("lol----"+password)
+
+      var logreg = {
+
+      "email" : email,
+      "password" : password, 
+    
+      }
+  
+   $.ajax({
+
+       url: 'http://localhost:8082/login' ,
+          type: 'POST',
+          contentType: 'application/json',
+            data: JSON.stringify(logreg),
+            success: function(response) {
+            console.log((response));
+          var usertype = response.usertype;
+          console.log(usertype)
+          if(usertype == "manufacturer")
+      {
+       window.location = "dashboard2.html";
+      } else {
+        window.location = "vendor.html";
+      }
+          },
+       
+           
+           
+      }); 
+    
+      
+  }
+
+  </script>
+</head>
+  
 <body>
    
          
@@ -32,26 +77,28 @@
        </div> -->
        <br>
        <br>
-       
+       <h3><center> Login </center></h3>
        <div class="containerdemo">
            
         <br> <br>
         <br>
+           
                <form>
-                       <label for="Name">UserName:</label>
-                       <input type="text" style="width:150px" text-align: "left"; name="UserName"id="Name"> <br> <br>
+                       <label for="Name">Email:</label>
+                       <input type="text" style="width:150px" text-align: "left"; name="UserName"id="email"> <br> <br>
                        <label for="password">Password:</label>
                        <input type="password" style="width:150px" text-align: "left" name="password"id="password"> <br>
                      </form> <br>
 
-                     <form action="dashboard2.html">
+                     <!-- <form action="dashboard2.html"> -->
                       <!-- <input type="submit" value="Login"> -->
-                      </form>
-   
+                      <!-- </form> -->
+                     
      <div class="wrapper">
-        <a href="dashboard2.html"><button>Login</button></a>
+        <!-- <a href="dashboard2.html"><button>Login</button></a> -->
      <!-- <button class="button" id="send" onclick="App.myFunction()">Login</button> -->
                                        <br>
+                                       <button type="button" onclick="login()">Login</button>
     </div>
    </div>
    </body>
