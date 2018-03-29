@@ -61,7 +61,8 @@
 .tftable tr:hover {background-color:#ffffff;}
 .tables {display:inline-block;}
 th {font-size:12px;background-color:#acc8cc;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;text-align:left;width:200px;}
-td {font-size:12px;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;width:200px;}
+td {font-size:12px;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;width:200px;  color: white;}
+  
 table{
   
       border: 1px solid lightblue;
@@ -143,6 +144,10 @@ input[type=file] {
    height:1100px;
    color:black;
 }
+.btn-primary {
+    border-color: azure;
+    color: aliceblue;
+}
 .parent {
    display: table;
    width: 100%;
@@ -171,10 +176,38 @@ input[type=password]:focus {
     border-width:1px;
     border-color:black;
 }
+.labelid {
+    display: unset;
+    width: 250px;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 500;
+    text-align: inherit;
+    color: white;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: white;
+}
 .container2 {
     position: relative;
    text-align: center;
    color:skyblue;
+}
+
+p {
+    font-size: 27px;
+    line-height: 1.5;
+    color: white;
+}
+
+
+input[type=file] {
+    margin: 0 auto;
+    text-align: center;
+    color: white;
 }
 .containerdemo {
    
@@ -183,7 +216,7 @@ input[type=password]:focus {
    height: 150px;
    border: 1px solid black; */
    width: 500px;
-   background: skyblue;
+   
    height:250px;
    margin: 0 auto;
    border-width:1px;
@@ -202,7 +235,7 @@ input[type=password]:focus {
     display: inline-block;
     width: 250px;
      max-width: 100%;
-     text-align: right;
+     text-align: center;
      margin-bottom: 5px;
      font-weight: 700;
  }
