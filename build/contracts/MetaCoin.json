@@ -320,7 +320,7 @@
                           "name": "tx",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 287,
+                          "referencedDeclaration": 239,
                           "src": "493:2:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_transaction",
@@ -452,7 +452,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 277,
+                          "referencedDeclaration": 229,
                           "src": "616:3:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -566,7 +566,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 277,
+                          "referencedDeclaration": 229,
                           "src": "663:3:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -708,7 +708,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 277,
+                          "referencedDeclaration": 229,
                           "src": "729:3:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1513,7 +1513,7 @@
                           "name": "tx",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 287,
+                          "referencedDeclaration": 239,
                           "src": "493:2:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_transaction",
@@ -1645,7 +1645,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 277,
+                          "referencedDeclaration": 229,
                           "src": "616:3:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1759,7 +1759,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 277,
+                          "referencedDeclaration": 229,
                           "src": "663:3:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1901,7 +1901,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 277,
+                          "referencedDeclaration": 229,
                           "src": "729:3:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -2488,127 +2488,13 @@
     "version": "0.4.19+commit.c4cbbb05.Emscripten.clang"
   },
   "networks": {
-    "1521439436914": {
-      "events": {},
-      "links": {
-        "ConvertLib": "0xde90146dd04508dced5aeba8fcde4cc4cf1e70d6"
-      }
-    },
-    "1521519889125": {
-      "events": {},
-      "links": {
-        "ConvertLib": "0x32c4980773fe8a69f696b9f1ed60c12c7de0f2f8"
-      }
-    },
-    "1521538638396": {
-      "events": {},
-      "links": {
-        "ConvertLib": "0x1f179656369f45bd9f35f2fa7c4e69c5b0e2fcc4"
-      }
-    },
-    "1521545588069": {
-      "events": {},
-      "links": {
-        "ConvertLib": "0x327d0c4eeef894ed9f70a531bc29d73ad36731dd"
-      }
-    },
-    "1521551150079": {
-      "events": {},
-      "links": {
-        "ConvertLib": "0x9117835049e16cc47e0ebf272f8711aa77ca820b"
-      }
-    },
-    "1521604713735": {
-      "events": {},
-      "links": {
-        "ConvertLib": "0x27fc90d475489f00beed351d8d91a60694de2c44"
-      }
-    },
-    "1521605962130": {
-      "events": {},
-      "links": {
-        "ConvertLib": "0xcb508a37e88a5440129ebcf7f80816d48683c349"
-      }
-    },
-    "1521607520031": {
-      "events": {},
-      "links": {
-        "ConvertLib": "0x0b66d47ac5890777f185aad4d3c762305b713dec"
-      }
-    },
-    "1521608230823": {
-      "events": {},
-      "links": {
-        "ConvertLib": "0x3d617bd72ce63e96ed4ab1c43824224d5f0aff75"
-      }
-    },
-    "1521608861683": {
-      "events": {},
-      "links": {
-        "ConvertLib": "0x62f339cbebad7f887f44e654a31dec216a4383ab"
-      }
-    },
-    "1521609614805": {
-      "events": {},
-      "links": {
-        "ConvertLib": "0xaa16c17dfa9dff1c749bbba4d4e46819b8b9fe14"
-      }
-    },
-    "1521628738556": {
-      "events": {},
-      "links": {
-        "ConvertLib": "0x9ca32bb30f65230069334a8b894b18a5470ea640"
-      }
-    },
-    "1521692316971": {
-      "events": {},
-      "links": {
-        "ConvertLib": "0x299d611e3ee7258289a474b10b6e0efb4eabb11f"
-      }
-    },
-    "1521693666804": {
-      "events": {},
-      "links": {
-        "ConvertLib": "0x43811d99fff2b5add62c368dfeaf2ab7dc85aaff"
-      }
-    },
-    "1521779660897": {
-      "events": {},
-      "links": {
-        "ConvertLib": "0x0da8e30fd816a2c3abedf9ab41df7bbb361c30f0"
-      }
-    },
-    "1521780329115": {
-      "events": {},
-      "links": {
-        "ConvertLib": "0x9906fbbd92327fef6e7b761ae13ce117cc3441ac"
-      }
-    },
-    "1521780507733": {
-      "events": {},
-      "links": {
-        "ConvertLib": "0x1db40b9cefaca5c196337d0c4d42db0d563a4dae"
-      }
-    },
-    "1522040031992": {
-      "events": {},
-      "links": {
-        "ConvertLib": "0x32c3e8e116661f222c21c642795ab273ff1d0dca"
-      }
-    },
-    "1522234497520": {
-      "events": {},
-      "links": {
-        "ConvertLib": "0x31773b6168ea253081f9ddf16a7159b905297fe7"
-      }
-    },
     "1522294421907": {
       "events": {},
       "links": {
-        "ConvertLib": "0x777c79127e66c3507c02aeb7b895b9c573aff8e3"
+        "ConvertLib": "0x89856b86755e03566257fb9f3bf679ee469419e2"
       }
     }
   },
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-03-29T03:35:23.289Z"
+  "updatedAt": "2018-03-29T03:43:25.765Z"
 }
