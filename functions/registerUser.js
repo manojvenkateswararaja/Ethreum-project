@@ -1,58 +1,54 @@
-<<<<<<< HEAD
 
 'use strict';
 
 const user = require('../models/registerether');  
 // const user = require('../models/fetchdata');
 
-exports.registerUser = (firstname, lastname, phonenumber,email,password, retypepassword,usertype) => new Promise((resolve, reject) => {
+exports.registerUser = (firstname, lastname, userObject,email,password, retypepassword,usertype, encodedMail) => {
+return  new Promise((resolve, reject) => {
 
     const newUser = new user({
 
-=======
-'use strict';
-const user = require('../models/registerether');  
-// const user = require('../models/fetchdata');
-exports.registerUser = (firstname, lastname, phonenumber,email,password, retypepassword,usertype) => new Promise((resolve, reject) => {
-    const newUser = new user({
->>>>>>> 50476397cf3a0421c3e22edf400b4a53dfa2f30b
         firstname : firstname, 
         lastname : lastname, 
-        phonenumber : phonenumber,
+        userObject: userObject,
         email : email,
         password : password, 
         retypepassword : retypepassword,
         usertype : usertype,
+        encodedMail: encodedMail,
+        count:0
     });
     newUser
-        .save()
-        .then(() => resolve({
-            status: 201,
-            message: 'Please verify your emailid and phone no'
-        }))
-        .catch(err => {
-<<<<<<< HEAD
+    .save()
 
-            if (err.code == 11000) {
+    .then(() => resolve({
+        status: 201,
+        message: 'User Registered Sucessfully !'
+    }))
 
-=======
-            if (err.code == 11000) {
->>>>>>> 50476397cf3a0421c3e22edf400b4a53dfa2f30b
-                reject({
-                    status: 409,
-                    message: 'User Already Registered !'
-                });
-<<<<<<< HEAD
+    .then(() => bcSdk.createUser({
+        user: users,
+        UserDetails: newUser
+    }))
 
-            } else {
+    .catch(err => {
 
-=======
-            } else {
->>>>>>> 50476397cf3a0421c3e22edf400b4a53dfa2f30b
-                reject({
-                    status: 500,
-                    message: 'Internal Server Error !'
-                });
-            }
-        });
+        if (err.code == 11000) {
+
+            reject({
+                status: 409,
+                message: 'User Already Registered !'
+            });
+
+        } else {
+
+            reject({
+                status: 500,
+                message: 'Internal Server Error !'
+            });
+        }
+    });
+
 });
+}

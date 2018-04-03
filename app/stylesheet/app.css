@@ -87,9 +87,6 @@ label{
     margin-bottom: 5px;
     font-weight: 700
 }
-input {
- display: inline-block;
-}
 textarea {
    margin: 0;
    font: inherit;
@@ -197,3 +194,16 @@ input[type=password]:focus {
 
     margin:10px auto;
  }
+ input[type="text"] {
+    margin: 0 auto;
+    color: black;
+    /* text-align: center; */
+}
+.wrapper {
+    text-align: center;
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+}

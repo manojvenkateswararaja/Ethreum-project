@@ -25,14 +25,14 @@
       "type": "function"
     }
   ],
-  "bytecode": "0x6060604052341561000f57600080fd5b60b08061001d6000396000f300606060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806396e4ee3d146044575b600080fd5b606160048080359060200190919080359060200190919050506077565b6040518082815260200191505060405180910390f35b60008183029050929150505600a165627a7a7230582029d9ade6967500c24526e4057d3b7d581442140ec83e2780dfcc25e30ee1e8820029",
-  "deployedBytecode": "0x606060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806396e4ee3d146044575b600080fd5b606160048080359060200190919080359060200190919050506077565b6040518082815260200191505060405180910390f35b60008183029050929150505600a165627a7a7230582029d9ade6967500c24526e4057d3b7d581442140ec83e2780dfcc25e30ee1e8820029",
+  "bytecode": "0x6060604052341561000f57600080fd5b60b08061001d6000396000f300606060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806396e4ee3d146044575b600080fd5b606160048080359060200190919080359060200190919050506077565b6040518082815260200191505060405180910390f35b60008183029050929150505600a165627a7a723058201d2c395b4d6ad390c4b2984989b321448d5344747d1e6516abe13620921ddfb40029",
+  "deployedBytecode": "0x606060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806396e4ee3d146044575b600080fd5b606160048080359060200190919080359060200190919050506077565b6040518082815260200191505060405180910390f35b60008183029050929150505600a165627a7a723058201d2c395b4d6ad390c4b2984989b321448d5344747d1e6516abe13620921ddfb40029",
   "sourceMap": "25:155:0:-;;;;;;;;;;;;;;;;;",
   "deployedSourceMap": "25:155:0:-;;;;;;;;;;;;;;;;;;;;;;;;46:132;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;117:20;160:14;151:6;:23;144:30;;46:132;;;;:::o",
   "source": "pragma solidity ^0.4.4;\n\nlibrary ConvertLib{\n\tfunction convert(uint amount,uint conversionRate) public pure returns (uint convertedAmount)\n\t{\n\t\treturn amount * conversionRate;\n\t}\n}\n",
-  "sourcePath": "/home/rpqb-desk-003/Ethreum-project/contracts/ConvertLib.sol",
+  "sourcePath": "/home/rpqb-desk-004/project/Ethreum-project/contracts/ConvertLib.sol",
   "ast": {
-    "absolutePath": "/home/rpqb-desk-003/Ethreum-project/contracts/ConvertLib.sol",
+    "absolutePath": "/home/rpqb-desk-004/project/Ethreum-project/contracts/ConvertLib.sol",
     "exportedSymbols": {
       "ConvertLib": [
         16
@@ -238,7 +238,7 @@
     "src": "0:181:0"
   },
   "legacyAST": {
-    "absolutePath": "/home/rpqb-desk-003/Ethreum-project/contracts/ConvertLib.sol",
+    "absolutePath": "/home/rpqb-desk-004/project/Ethreum-project/contracts/ConvertLib.sol",
     "exportedSymbols": {
       "ConvertLib": [
         16
@@ -448,136 +448,43 @@
     "version": "0.4.19+commit.c4cbbb05.Emscripten.clang"
   },
   "networks": {
-    "1522294421907": {
-      "events": {},
-      "links": {},
-<<<<<<< HEAD
-      "address": "0xde90146dd04508dced5aeba8fcde4cc4cf1e70d6",
-      "transactionHash": "0x8ba2bfd980dd31cac2c665a1410c96c92a3c9929ae7855c92e2ff5c6a2213852"
-    },
-    "1521519889125": {
-      "events": {},
-      "links": {},
-      "address": "0x32c4980773fe8a69f696b9f1ed60c12c7de0f2f8",
-      "transactionHash": "0xd26776f096edc287927b93e20d6c771a41543183690baab3d4bb3ec5d627a523"
-    },
-    "1521538638396": {
-      "events": {},
-      "links": {},
-      "address": "0x1f179656369f45bd9f35f2fa7c4e69c5b0e2fcc4",
-      "transactionHash": "0xd26776f096edc287927b93e20d6c771a41543183690baab3d4bb3ec5d627a523"
-    },
-    "1521545588069": {
-      "events": {},
-      "links": {},
-      "address": "0x327d0c4eeef894ed9f70a531bc29d73ad36731dd",
-      "transactionHash": "0xd26776f096edc287927b93e20d6c771a41543183690baab3d4bb3ec5d627a523"
-    },
-    "1521551150079": {
-      "events": {},
-      "links": {},
-      "address": "0x9117835049e16cc47e0ebf272f8711aa77ca820b",
-      "transactionHash": "0xd26776f096edc287927b93e20d6c771a41543183690baab3d4bb3ec5d627a523"
-    },
-    "1521604713735": {
-      "events": {},
-      "links": {},
-      "address": "0x27fc90d475489f00beed351d8d91a60694de2c44",
-      "transactionHash": "0xd26776f096edc287927b93e20d6c771a41543183690baab3d4bb3ec5d627a523"
-    },
-    "1521605962130": {
-      "events": {},
-      "links": {},
-      "address": "0xcb508a37e88a5440129ebcf7f80816d48683c349",
-      "transactionHash": "0xd26776f096edc287927b93e20d6c771a41543183690baab3d4bb3ec5d627a523"
-    },
-    "1521607520031": {
-      "events": {},
-      "links": {},
-      "address": "0x0b66d47ac5890777f185aad4d3c762305b713dec",
-      "transactionHash": "0xd26776f096edc287927b93e20d6c771a41543183690baab3d4bb3ec5d627a523"
-    },
-    "1521608230823": {
-      "events": {},
-      "links": {},
-      "address": "0x3d617bd72ce63e96ed4ab1c43824224d5f0aff75",
-      "transactionHash": "0xd26776f096edc287927b93e20d6c771a41543183690baab3d4bb3ec5d627a523"
-    },
-    "1521608861683": {
-      "events": {},
-      "links": {},
-      "address": "0x62f339cbebad7f887f44e654a31dec216a4383ab",
-      "transactionHash": "0xd26776f096edc287927b93e20d6c771a41543183690baab3d4bb3ec5d627a523"
-    },
-    "1521609614805": {
-      "events": {},
-      "links": {},
-      "address": "0xaa16c17dfa9dff1c749bbba4d4e46819b8b9fe14",
-      "transactionHash": "0xd26776f096edc287927b93e20d6c771a41543183690baab3d4bb3ec5d627a523"
-    },
-    "1521628738556": {
-      "events": {},
-      "links": {},
-      "address": "0x9ca32bb30f65230069334a8b894b18a5470ea640",
-      "transactionHash": "0xd26776f096edc287927b93e20d6c771a41543183690baab3d4bb3ec5d627a523"
-    },
-    "1521692316971": {
-      "events": {},
-      "links": {},
-      "address": "0x299d611e3ee7258289a474b10b6e0efb4eabb11f",
-      "transactionHash": "0xd26776f096edc287927b93e20d6c771a41543183690baab3d4bb3ec5d627a523"
-    },
-    "1521693666804": {
-      "events": {},
-      "links": {},
-      "address": "0x43811d99fff2b5add62c368dfeaf2ab7dc85aaff",
-      "transactionHash": "0xd26776f096edc287927b93e20d6c771a41543183690baab3d4bb3ec5d627a523"
-    },
-    "1521692745236": {
-      "events": {},
-      "links": {},
-      "address": "0x635f796197c900974b22ce056bd12c4cd0daf275",
-      "transactionHash": "0x2224b245ef49de04c03d30e5adad724a4c8f811c9e1cd88bed0a0cdd62487b65"
-    },
-    "1521779599355": {
-      "events": {},
-      "links": {},
-      "address": "0xaa8555c52122f74564213c7a5f806dde61b4d616",
-      "transactionHash": "0x2224b245ef49de04c03d30e5adad724a4c8f811c9e1cd88bed0a0cdd62487b65"
-    },
-    "1522038252989": {
-      "events": {},
-      "links": {},
-      "address": "0xc0e1d383921a90b47350530ef8e18b1ac796f2a0",
-      "transactionHash": "0x2224b245ef49de04c03d30e5adad724a4c8f811c9e1cd88bed0a0cdd62487b65"
-    },
-    "1522124232482": {
-      "events": {},
-      "links": {},
-      "address": "0x916cba99f0d3dd98370243dc2d8764d26e9c8fdc",
-      "transactionHash": "0x2224b245ef49de04c03d30e5adad724a4c8f811c9e1cd88bed0a0cdd62487b65"
-    },
-    "1522211420950": {
-      "events": {},
-      "links": {},
-      "address": "0x17e7ee2f0ce05d4586d26a4c0a7ce33284b1f66c",
-      "transactionHash": "0x2224b245ef49de04c03d30e5adad724a4c8f811c9e1cd88bed0a0cdd62487b65"
-    },
     "1522294882536": {
       "events": {},
       "links": {},
-      "address": "0xf20d684142e6aad293de234712efd618f209653c",
-      "transactionHash": "0x2224b245ef49de04c03d30e5adad724a4c8f811c9e1cd88bed0a0cdd62487b65"
+      "address": "0x91c0a1c4b1118fea0274bde7f4d88c82a403a67a",
+      "transactionHash": "0x894a8a7da3ec9435ef809a0eec38995a9820dd25228d1e38598df8aa25398104"
+    },
+    "1522332574607": {
+      "events": {},
+      "links": {},
+      "address": "0xf3b88802c8e06dafc291dee47e1c842177924bac",
+      "transactionHash": "0xd791f0c62a85b1599b32c37c37f383e114a9f620fe9026be3f1c86ed6bdc9db3"
+    },
+    "1522389863287": {
+      "events": {},
+      "links": {},
+      "address": "0x393bcb42f7ce726971414e12a228f19174a9d380",
+      "transactionHash": "0xd791f0c62a85b1599b32c37c37f383e114a9f620fe9026be3f1c86ed6bdc9db3"
+    },
+    "1522470650999": {
+      "events": {},
+      "links": {},
+      "address": "0xce6bef4a752035b4945b90067497d144f83ec30d",
+      "transactionHash": "0xd791f0c62a85b1599b32c37c37f383e114a9f620fe9026be3f1c86ed6bdc9db3"
+    },
+    "1522642481048": {
+      "events": {},
+      "links": {},
+      "address": "0x732f913c61048e189caa84e26a6d359d30e77928",
+      "transactionHash": "0xd791f0c62a85b1599b32c37c37f383e114a9f620fe9026be3f1c86ed6bdc9db3"
+    },
+    "1522728090525": {
+      "events": {},
+      "links": {},
+      "address": "0xdb0f3518acc79a0365dca7ff7b12649de6828a5d",
+      "transactionHash": "0xd791f0c62a85b1599b32c37c37f383e114a9f620fe9026be3f1c86ed6bdc9db3"
     }
   },
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-03-29T03:41:48.860Z"
-=======
-      "address": "0x89856b86755e03566257fb9f3bf679ee469419e2",
-      "transactionHash": "0x7dd7ce7e715c6a23a474cde48a12fd8bd2dcb542e74bfc28da1094e233cd36c4"
-    }
-  },
-  "schemaVersion": "2.0.0",
-  "updatedAt": "2018-03-29T03:43:25.763Z"
->>>>>>> a76ca01b14cd12ed03835ecfc5d14bcb56ecda91
+  "updatedAt": "2018-04-03T04:02:37.531Z"
 }
