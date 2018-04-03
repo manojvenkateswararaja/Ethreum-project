@@ -5,7 +5,7 @@ const user = require('../models/registerether');
 // const user = require('../models/fetchdata');
 
 exports.registerUser = (firstname, lastname, userObject,email,password, retypepassword,usertype, encodedMail) => {
-return  new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
 
     const newUser = new user({
 

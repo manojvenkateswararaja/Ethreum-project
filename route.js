@@ -16,14 +16,14 @@ const login = require('./functions/login');
 
 
 
-const nexmo = new Nexmo({
-    apiKey: 'be214ba0',
-    apiSecret: 'F0WCG2adz2udXrCB'
-});
+// const nexmo = new Nexmo({
+//     apiKey: 'be214ba0',
+//     apiSecret: 'F0WCG2adz2udXrCB'
+// });
 
 
 
-module.exports = router => {
+ module.exports = router => {
 
 router.post('/registerUser', cors(), (req, res) => { 
     console.log("UI",req.body);
@@ -42,74 +42,47 @@ router.post('/registerUser', cors(), (req, res) => {
     console.log(usertype);
     const userObject = req.body.userObject;
     console.log( "phone",userObject);
-    var phonetosend = userObject.phone;
-    var otp = "";
-    var possible = "0123456789";
-    for (var i = 0; i < 4; i++)
-        otp += possible.charAt(Math.floor(Math.random() * possible.length));
-    console.log("otp" + otp);
-    var encodedMail = new Buffer(req.body.email).toString('base64');
+    // var phonetosend = userObject.phone;
+    // var otp = "";
+    // var possible = "0123456789";
+    // for (var i = 0; i < 4; i++)
+    //     otp += possible.charAt(Math.floor(Math.random() * possible.length));
+    // console.log("otp" + otp);
+     var encodedMail = new Buffer(req.body.email).toString('base64');
     
     if (!firstname || !lastname || !userObject || !email || !password || !retypepassword || !usertype) {
-        res
-            .status(400)
+        res.status(400)
             .json({
                 message: 'Invalid Request !'
             });
 
     } else {
 
-        registerUser
-            .registerUser(firstname, lastname, userObject,email,password, retypepassword,usertype,encodedMail)
+        registerUser.registerUser(firstname, lastname, userObject,email,password, retypepassword,usertype,encodedMail)
             .then(result => {
               
-
-                var link = "https://" + remoteHost + "/email/verify?mail=" + encodedMail + "&email=" + email;
-
-                var otptosend = 'your otp is ' + otp;
-                nodemailer.createTestAccount((err, account) => {
-                   
-                    let transporter = nodemailer.createTransport({
-                        host: 'smtp.ethereal.email',
-                        port: 587,
-                        secure: false, 
-                        auth: {
-                            user: "harinishree.muniraj@rapidqube.com", 
-                            pass:  "Harini!96"
-                        }
-                    });
-                
-                    
-                    let mailOptions = {
-                        from: '"EDI project"<manoj.venkateswararaja@rapidqube.com>',
-                        to:  emailtosend,
-                        subject: 'Please confirm your Email account',
-                        text: req.body.text,
-                        html: "Hello,<br> Please Click on the link to verify your email.<br><a href=" + link + ">Click here to verify</a>"
-                    };
-                
-                  
-                    transporter.sendMail(mailOptions, (error, info) => {
-                        if (error) {
-                            return console.log(error);
-                        }
-                        console.log('Message sent: %s', info.messageId);
-            
-                        console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-                
-                     
-                    });
+                var transporter = nodemailer.createTransport("SMTP", {
+                    host: 'smtp.ipage.com',
+                    port: 587,
+                    secure: true,
+                    auth: {
+                        user: "rahul.desai@rapidqube.com",
+                        pass: "Rpqb@12345"
+                    }
                 });
-                nexmo
-                    .message
-                    .sendSms('919842653746', phonetosend, otptosend, {
-                        type: 'unicode'
-                    }, (err, responseData) => {
-                        if (responseData) {
-                            console.log(responseData)
-                        }
-                    }) 
-                    .then(result => {
+                                   
+                                    var mailOptions = {
+                                        transport: transporter,
+                                        from: 'rahul.desai@rapidqube.com',
+                                        to: email,
+                                        subject: 'Document requirnment',
+                
+                                        html: "Chennai Super Kings"
+                                    };
+                                    transporter.sendMail(mailOptions, (error, info) => {
+                                        if (error) {}
+                                    });
+              
    
                     res.status(result.status).json({
                         message: result.message,
@@ -122,9 +95,8 @@ router.post('/registerUser', cors(), (req, res) => {
                 }).json({
                     status: err.status
                 }));
-            });
-    }
-});
+            }
+        });
 
 router.post('/login', cors(), (req, res) => {
     console.log("entering login function in functions ");
@@ -275,4 +247,4 @@ router.post("/user/phoneverification", cors(), (req, res) => {
 });
 
 
-}
+    }
