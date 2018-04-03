@@ -13,11 +13,13 @@ module.exports = {
             { from: './app/register.html', to: "register.html" }
         ])
     ],
+  
     module: {
         rules: [{
             test: /\.css$/,
             use: ['style-loader', 'css-loader']
         }],
+     
         loaders: [
             { test: /\.json$/, use: 'json-loader' },
             {

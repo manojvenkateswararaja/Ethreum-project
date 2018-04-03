@@ -1,18 +1,25 @@
-@media (min-width: 992px){
-    .typo-line{
-       padding-left: 140px;
-       margin-bottom: 40px;
-       position: relative;
-   }
-   .typo-line .category{
-       transform: translateY(-50%);
-       top: 50%;
-       left: 0px;
-       position: absolute;
-   }
-}
+
 .all-icons [class*="pe-"]{
    font-size: 40px;
+}
+input {
+    display: inline-block;
+    color: black;
+}
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: black;
+}
+th {
+    font-size: 12px;
+    background-color: unset;
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: skyblue;
+    text-align: left;
 }
 .all-icons input{
    border: 0;
@@ -60,7 +67,7 @@
 .tftable td {font-size:12px;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;width:200px;}
 .tftable tr:hover {background-color:#ffffff;}
 .tables {display:inline-block;}
-th {font-size:12px;background-color:#acc8cc;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;text-align:left;width:200px;}
+th {font-size:12px;background-color:unset;border-width: 1px;padding: 8px;border-style: solid;border-color: teal;text-align:left;width:200px;}
 td {font-size:12px;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;width:200px;  color: white;}
   
 table{
@@ -71,7 +78,7 @@ table{
     margin-top: 100px;   
 }
 th{
-   border-right-width:medium;
+  
    border-right-color:#000;
    border-right-style:groove;
    width: 25%;
@@ -249,3 +256,8 @@ input[type=file] {
     text-align:left;
 
  }
+ input[type="text"] {
+    margin: 0 auto;
+    /* text-align: center; */
+    color: black;
+}

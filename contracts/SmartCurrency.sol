@@ -1,20 +1,15 @@
 
 pragma solidity ^0.4.6;
 contract SmartCurrency {
-   mapping (address => Usr ) Users;
-    
-   struct Usr {
-    
-    string [] details;
-    
-    }
+
+  
 
 
  // This is a Type
  struct DocumentStruct{
    // Not possible to pass strings between contracts at this time
-   string name;
- string updateString;
+   string file;
+
   
  }
    
@@ -24,9 +19,9 @@ contract SmartCurrency {
 
 
  // Set values in storage
- function StoreDocument(bytes32 key, string name, string updateString) returns (bool success) {
-  documentStructs[key].name  = name;
-  documentStructs[key].updateString  = updateString;
+ function StoreDocument(bytes32 Key, string file) returns (bool success) {
+  documentStructs[Key].file  = file;
+ 
  
 
   return true;

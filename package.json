@@ -30,7 +30,7 @@
     "json-loader": "^0.5.4",
     "style-loader": "^0.13.2",
     "truffle-contract": "^1.1.11",
-    "web3": "^0.18.2",
+    "web3": "^1.0.0-beta.24",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.5.0",
     "nodemailer": "^0.7.1"
@@ -41,12 +41,15 @@
     "config": "^1.30.0",
     "connect-multiparty": "^2.1.0",
     "cors": "^2.8.4",
+    "crypto": "^1.0.1",
     "ethereumjs-wallet": "^0.6.0",
+    "file-system": "^2.2.2",
     "log4js": "^2.5.3",
     "mongoose": "^5.0.11",
     "morgan": "^1.9.0",
     "mysql": "^2.13.0",
     "promise": "^8.0.1",
+    "read-directory": "^3.0.0",
     "web3": "^0.18.4",
     "web3-provider-engine": "^13.3.3"
   }
