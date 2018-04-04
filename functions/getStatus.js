@@ -51,15 +51,14 @@ var account;
     
    
 
- module.exports.filereader = (URL,pubKey,Key,file) => new Promise((resolve, reject) => {   
+ module.exports.getStatus = (key) => new Promise((resolve, reject) => {   
  
     var globalVariable={
-        files: [URL,pubKey,Key,file]
+        Key: [key]
      };
   
         console.log("entering into the web3.js fnc");
-        console.log("files.......,",file)
-        
+        console.log("files.......,",key)
     SmartCurrency.setProvider(web3SocketProvider);
         // SmartCurrencyE.setProvider(web3.currentProvider);
        
@@ -91,39 +90,38 @@ var account;
 
     
         var rapid;
-        console.log("manoj")
-        SmartCurrency.deployed().then(function(instance) {
-            console.log("entering into solidity")
+    
+        SmartCurrency.deployed().then(function(instance){
             rapid = instance;
-            return rapid.StoreDocument(Key.toString(),file.toString(),{
-                from: account
                 
+            return rapid.documentStructs.call(key,{
+                from: account
+            
             });
-           
-       }) .then(() => resolve({
-           status: 201,
-          message: 'Transaction complete!'
+            console.log("response",value)
        
-     }))
-    .catch(err => {
-        if (err.code == 11000) {
-            reject({
-                status: 409,
-                message: 'Error Approving transaction due to insufficient Balance'
-            });
-        } else {
-            reject({
-                status: 500,
-                message: 'Internal Server Error !'
-            });
-        }
-    })
-});
+        }).then((value) => resolve({
+            status: 201,
+           message:value
+        
+      }))
 
+        .catch(err => {
+            if (err.code == 11000) {
+                reject({
+                    status: 409,
+                    message: 'Error Approving transaction due to insufficient Balance'
+                });
+            } else {
+                reject({
+                    status: 500,
+                    message: 'Internal Server Error !'
+                });
+            }
+        })
+    });
+    
 
-
-
-      
     function window(){
             // window.addEventListener('load', function() {
                 // Checking if Web3 has been injected by the browser (Mist/MetaMask)

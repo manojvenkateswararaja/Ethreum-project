@@ -9,12 +9,16 @@ var path = require('path');
 
 const registerUser = require('./functions/registerUser');
 var filereader = require('./functions/filereader')
+var getStatus = require('./functions/getStatus')
 const login = require('./functions/login');
 // var fs = require('fs');
 // var stats = fs.statSync("app/image/*.jpg");
 const fs = require('fs');
+const Crypto = require("crypto");
+var sha256 = require('js-sha256');
 
-var cron = require('cron');
+var cron = require('node-cron');
+ 
 
 
 
@@ -42,25 +46,58 @@ module.exports = router => {
     console.log("UI",req.body);
     const URL = req.body.URL;
     console.log(URL);
+    const pubKey = req.body.pubKey;
+    console.log(pubKey);
     const Key = req.body.Key;
     console.log(Key);
-     var cronJob = cron.job('*/5 * * * *', function (){
+
         // perform operation e.g. GET request http.get() etc.
        
       
-     
-        fs.readdir("/home/rpqb-desk-003/Ethreum-project/app/image/", (err, files) => {
-            fs.stat("/home/rpqb-desk-003/Ethreum-project/app/image/", (err, stats) => {
-                stats.foeEach(detail => {
-                    console.log(stats);
-                    var results = detail;
-                    console.log(results)
-                })
+        // cron.schedule('*/2 * * * *', function(){
+         
+          
+        fs.readdir(req.body.URL, (err, files) => {
+            // sha256(req.body.URL);
+
+            fs.stat(req.body.URL, (err, stats)=> { 
+                if(err){
+                  //doing what I call "early return" pattern or basically "blacklisting"
+                  //we stop errors at this block and prevent further execution of code
+              
+                  //in here, do something like check what error was returned
+                  switch(err.code){
+                    case 'ENOENT':
+                      console.log(req.body.URL + ' does not exist');
+                      break;
+
+                  }
+                  //of course you should not proceed so you should return
+                  return;
+                }
+              
+                //back there, we handled the error and blocked execution
+                //beyond this line, we assume there's no error and proceed
+              
+                if (stats.isDirectory()) {
+                  console.log(req.body.URL + ": is a directory");
+                } else {
+                  console.log(stats);
+                }
+              });
           files.forEach(file => {
-            console.log("manoj",file);
-            var result = file;
-        console.log(result)
-        if (!URL || !Key || !result ) {
+              if(file)
+            console.log("data",file);
+            var file = file;
+      
+                     
+// var file = sha256.create();
+// file.update(req.body.URL);
+// file.hex();
+// console.log("encrypted",file)
+            
+        console.log(file)
+        if (!URL || !pubKey||!Key || !file  ) {
         res
             .status(400)
             .json({
@@ -70,11 +107,11 @@ module.exports = router => {
             else {
 
                 filereader
-                    .filereader(URL, Key,result)
+                    .filereader(URL,Key, pubKey,file)
                     .then(result => {
         
                         res.send({
-                            "message": "Transaction Complete",
+                            "message": "Transaction complete",
                             "status": true,
         
                          
@@ -91,15 +128,54 @@ module.exports = router => {
                     }));
             }
          });
+        
+      
        })
-        console.info('cron job completed');
         
      }); 
-     cronJob.start();
-    })
-})
+    //  console.log('running a task every two minutes');
+    // });
      
     
+    router.post('/getStatus', cors(), (req,res) => {
+        var self = this;
+        var key = req.body.Key;
+        console.log(key)
+        if (!key) {
+            res
+                .status(400)
+                .json({
+                    message: 'Invalid Request !'
+                });
+            }
+                else {
+    
+                    getStatus
+                        .getStatus(key)
+                        .then(function(result) {
+            console.log("result.value",result.value)
+                            res.send({
+                                "message": result.value,
+                                "status": true,
+            
+                             
+            
+                            });
+            
+            
+                        })
+                        .catch(err => res.status(err.status).json({
+                            message: err.message
+                        }).json({
+                            status: err.status
+                           
+                        }));
+                }
+             });
+            
+          
+           
+  
 
    
    

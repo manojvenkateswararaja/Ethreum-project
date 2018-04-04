@@ -1,4 +1,3 @@
-
 pragma solidity ^0.4.6;
 contract SmartCurrency {
 
@@ -9,6 +8,7 @@ contract SmartCurrency {
  struct DocumentStruct{
    // Not possible to pass strings between contracts at this time
    string file;
+  
 
   
  }
@@ -19,8 +19,8 @@ contract SmartCurrency {
 
 
  // Set values in storage
- function StoreDocument(bytes32 Key, string file) returns (bool success) {
-  documentStructs[Key].file  = file;
+ function StoreDocument( bytes32 key,  string file) returns (bool success) {
+  documentStructs[key].file  = file;
  
  
 

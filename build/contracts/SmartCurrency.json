@@ -24,7 +24,7 @@
       "constant": false,
       "inputs": [
         {
-          "name": "Key",
+          "name": "key",
           "type": "bytes32"
         },
         {
@@ -44,11 +44,11 @@
       "type": "function"
     }
   ],
-  "bytecode": "0x6060604052341561000f57600080fd5b6102bc8061001e6000396000f30060606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806372061b9114610051578063f14bf89e1461010e575b600080fd5b341561005c57600080fd5b610076600480803560001916906020019091905050610190565b60405180806020018281038252838181546001816001161561010002031660029004815260200191508054600181600116156101000203166002900480156100ff5780601f106100d4576101008083540402835291602001916100ff565b820191906000526020600020905b8154815290600101906020018083116100e257829003601f168201915b50509250505060405180910390f35b341561011957600080fd5b61017660048080356000191690602001909190803590602001908201803590602001908080601f016020809104026020016040519081016040528093929190818152602001838380828437820191505050505050919050506101ad565b604051808215151515815260200191505060405180910390f35b600060205280600052604060002060009150905080600001905081565b600081600080856000191660001916815260200190815260200160002060000190805190602001906101e09291906101eb565b506001905092915050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061022c57805160ff191683800117855561025a565b8280016001018555821561025a579182015b8281111561025957825182559160200191906001019061023e565b5b509050610267919061026b565b5090565b61028d91905b80821115610289576000816000905550600101610271565b5090565b905600a165627a7a72305820c6159d80a6dabdb5030d223567ef3b0ab4eee3f90c01a58f42f2ba1170e6c8040029",
-  "deployedBytecode": "0x60606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806372061b9114610051578063f14bf89e1461010e575b600080fd5b341561005c57600080fd5b610076600480803560001916906020019091905050610190565b60405180806020018281038252838181546001816001161561010002031660029004815260200191508054600181600116156101000203166002900480156100ff5780601f106100d4576101008083540402835291602001916100ff565b820191906000526020600020905b8154815290600101906020018083116100e257829003601f168201915b50509250505060405180910390f35b341561011957600080fd5b61017660048080356000191690602001909190803590602001908201803590602001908080601f016020809104026020016040519081016040528093929190818152602001838380828437820191505050505050919050506101ad565b604051808215151515815260200191505060405180910390f35b600060205280600052604060002060009150905080600001905081565b600081600080856000191660001916815260200190815260200160002060000190805190602001906101e09291906101eb565b506001905092915050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061022c57805160ff191683800117855561025a565b8280016001018555821561025a579182015b8281111561025957825182559160200191906001019061023e565b5b509050610267919061026b565b5090565b61028d91905b80821115610289576000816000905550600101610271565b5090565b905600a165627a7a72305820c6159d80a6dabdb5030d223567ef3b0ab4eee3f90c01a58f42f2ba1170e6c8040029",
-  "sourceMap": "25:467:0:-;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "25:467:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;267:57;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;355:133;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;267:57;;;;;;;;;;;;;;;;;;;;;:::o;355:133::-;413:12;460:4;431:15;:20;447:3;431:20;;;;;;;;;;;;;;;;;:25;;:33;;;;;;;;;;;;:::i;:::-;;480:4;473:11;;355:133;;;;:::o;25:467::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
-  "source": "\npragma solidity ^0.4.6;\ncontract SmartCurrency {\n\n  \n\n\n // This is a Type\n struct DocumentStruct{\n   // Not possible to pass strings between contracts at this time\n   string file;\n\n  \n }\n   \n\n // This is a namespace where we will store docs of Type DocumentStruct\n  mapping(bytes32 => DocumentStruct) public documentStructs;\n\n\n // Set values in storage\n function StoreDocument(bytes32 Key, string file) returns (bool success) {\n  documentStructs[Key].file  = file;\n \n \n\n  return true;\n }\n \n}",
+  "bytecode": "0x6060604052341561000f57600080fd5b6102bc8061001e6000396000f30060606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806372061b9114610051578063f14bf89e1461010e575b600080fd5b341561005c57600080fd5b610076600480803560001916906020019091905050610190565b60405180806020018281038252838181546001816001161561010002031660029004815260200191508054600181600116156101000203166002900480156100ff5780601f106100d4576101008083540402835291602001916100ff565b820191906000526020600020905b8154815290600101906020018083116100e257829003601f168201915b50509250505060405180910390f35b341561011957600080fd5b61017660048080356000191690602001909190803590602001908201803590602001908080601f016020809104026020016040519081016040528093929190818152602001838380828437820191505050505050919050506101ad565b604051808215151515815260200191505060405180910390f35b600060205280600052604060002060009150905080600001905081565b600081600080856000191660001916815260200190815260200160002060000190805190602001906101e09291906101eb565b506001905092915050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061022c57805160ff191683800117855561025a565b8280016001018555821561025a579182015b8281111561025957825182559160200191906001019061023e565b5b509050610267919061026b565b5090565b61028d91905b80821115610289576000816000905550600101610271565b5090565b905600a165627a7a723058200a33b3f31376c538b36b910f8e28e8af43a891d105b809ad78fd35994c0100130029",
+  "deployedBytecode": "0x60606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806372061b9114610051578063f14bf89e1461010e575b600080fd5b341561005c57600080fd5b610076600480803560001916906020019091905050610190565b60405180806020018281038252838181546001816001161561010002031660029004815260200191508054600181600116156101000203166002900480156100ff5780601f106100d4576101008083540402835291602001916100ff565b820191906000526020600020905b8154815290600101906020018083116100e257829003601f168201915b50509250505060405180910390f35b341561011957600080fd5b61017660048080356000191690602001909190803590602001908201803590602001908080601f016020809104026020016040519081016040528093929190818152602001838380828437820191505050505050919050506101ad565b604051808215151515815260200191505060405180910390f35b600060205280600052604060002060009150905080600001905081565b600081600080856000191660001916815260200190815260200160002060000190805190602001906101e09291906101eb565b506001905092915050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061022c57805160ff191683800117855561025a565b8280016001018555821561025a579182015b8281111561025957825182559160200191906001019061023e565b5b509050610267919061026b565b5090565b61028d91905b80821115610289576000816000905550600101610271565b5090565b905600a165627a7a723058200a33b3f31376c538b36b910f8e28e8af43a891d105b809ad78fd35994c0100130029",
+  "sourceMap": "24:472:0:-;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "24:472:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;269:57;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;357:135;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;269:57;;;;;;;;;;;;;;;;;;;;;:::o;357:135::-;417:12;464:4;435:15;:20;451:3;435:20;;;;;;;;;;;;;;;;;:25;;:33;;;;;;;;;;;;:::i;:::-;;484:4;477:11;;357:135;;;;:::o;24:472::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.4.6;\ncontract SmartCurrency {\n\n  \n\n\n // This is a Type\n struct DocumentStruct{\n   // Not possible to pass strings between contracts at this time\n   string file;\n  \n\n  \n }\n   \n\n // This is a namespace where we will store docs of Type DocumentStruct\n  mapping(bytes32 => DocumentStruct) public documentStructs;\n\n\n // Set values in storage\n function StoreDocument( bytes32 key,  string file) returns (bool success) {\n  documentStructs[key].file  = file;\n \n \n\n  return true;\n }\n \n}",
   "sourcePath": "/home/rpqb-desk-003/Ethreum-project/contracts/SmartCurrency.sol",
   "ast": {
     "absolutePath": "/home/rpqb-desk-003/Ethreum-project/contracts/SmartCurrency.sol",
@@ -69,7 +69,7 @@
           ".6"
         ],
         "nodeType": "PragmaDirective",
-        "src": "1:23:0"
+        "src": "0:23:0"
       },
       {
         "baseContracts": [],
@@ -94,7 +94,7 @@
                 "name": "file",
                 "nodeType": "VariableDeclaration",
                 "scope": 4,
-                "src": "168:11:0",
+                "src": "167:11:0",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -105,7 +105,7 @@
                   "id": 2,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "168:6:0",
+                  "src": "167:6:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string storage pointer"
@@ -118,7 +118,7 @@
             "name": "DocumentStruct",
             "nodeType": "StructDefinition",
             "scope": 28,
-            "src": "76:111:0",
+            "src": "75:114:0",
             "visibility": "public"
           },
           {
@@ -127,7 +127,7 @@
             "name": "documentStructs",
             "nodeType": "VariableDeclaration",
             "scope": 28,
-            "src": "267:57:0",
+            "src": "269:57:0",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -140,14 +140,14 @@
                 "id": 5,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
-                "src": "275:7:0",
+                "src": "277:7:0",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes32",
                   "typeString": "bytes32"
                 }
               },
               "nodeType": "Mapping",
-              "src": "267:34:0",
+              "src": "269:34:0",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_DocumentStruct_$4_storage_$",
                 "typeString": "mapping(bytes32 => struct SmartCurrency.DocumentStruct storage ref)"
@@ -158,7 +158,7 @@
                 "name": "DocumentStruct",
                 "nodeType": "UserDefinedTypeName",
                 "referencedDeclaration": 4,
-                "src": "286:14:0",
+                "src": "288:14:0",
                 "typeDescriptions": {
                   "typeIdentifier": "t_struct$_DocumentStruct_$4_storage_ptr",
                   "typeString": "struct SmartCurrency.DocumentStruct storage pointer"
@@ -172,7 +172,7 @@
             "body": {
               "id": 26,
               "nodeType": "Block",
-              "src": "427:61:0",
+              "src": "431:61:0",
               "statements": [
                 {
                   "expression": {
@@ -193,7 +193,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 8,
-                          "src": "431:15:0",
+                          "src": "435:15:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_DocumentStruct_$4_storage_$",
                             "typeString": "mapping(bytes32 => struct SmartCurrency.DocumentStruct storage ref)"
@@ -203,11 +203,11 @@
                         "indexExpression": {
                           "argumentTypes": null,
                           "id": 18,
-                          "name": "Key",
+                          "name": "key",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 10,
-                          "src": "447:3:0",
+                          "src": "451:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bytes32",
                             "typeString": "bytes32"
@@ -218,7 +218,7 @@
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "IndexAccess",
-                        "src": "431:20:0",
+                        "src": "435:20:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_struct$_DocumentStruct_$4_storage",
                           "typeString": "struct SmartCurrency.DocumentStruct storage ref"
@@ -232,7 +232,7 @@
                       "memberName": "file",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 3,
-                      "src": "431:25:0",
+                      "src": "435:25:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
                         "typeString": "string storage ref"
@@ -247,13 +247,13 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 12,
-                      "src": "460:4:0",
+                      "src": "464:4:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
                         "typeString": "string memory"
                       }
                     },
-                    "src": "431:33:0",
+                    "src": "435:33:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage",
                       "typeString": "string storage ref"
@@ -261,7 +261,7 @@
                   },
                   "id": 23,
                   "nodeType": "ExpressionStatement",
-                  "src": "431:33:0"
+                  "src": "435:33:0"
                 },
                 {
                   "expression": {
@@ -274,7 +274,7 @@
                     "kind": "bool",
                     "lValueRequested": false,
                     "nodeType": "Literal",
-                    "src": "480:4:0",
+                    "src": "484:4:0",
                     "subdenomination": null,
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
@@ -285,7 +285,7 @@
                   "functionReturnParameters": 16,
                   "id": 25,
                   "nodeType": "Return",
-                  "src": "473:11:0"
+                  "src": "477:11:0"
                 }
               ]
             },
@@ -303,10 +303,10 @@
                 {
                   "constant": false,
                   "id": 10,
-                  "name": "Key",
+                  "name": "key",
                   "nodeType": "VariableDeclaration",
                   "scope": 27,
-                  "src": "378:11:0",
+                  "src": "381:11:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -317,7 +317,7 @@
                     "id": 9,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "378:7:0",
+                    "src": "381:7:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -332,7 +332,7 @@
                   "name": "file",
                   "nodeType": "VariableDeclaration",
                   "scope": 27,
-                  "src": "391:11:0",
+                  "src": "395:11:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -343,7 +343,7 @@
                     "id": 11,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "391:6:0",
+                    "src": "395:6:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string storage pointer"
@@ -353,7 +353,7 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "377:26:0"
+              "src": "379:28:0"
             },
             "payable": false,
             "returnParameters": {
@@ -366,7 +366,7 @@
                   "name": "success",
                   "nodeType": "VariableDeclaration",
                   "scope": 27,
-                  "src": "413:12:0",
+                  "src": "417:12:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -377,7 +377,7 @@
                     "id": 14,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "413:4:0",
+                    "src": "417:4:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -387,20 +387,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "412:14:0"
+              "src": "416:14:0"
             },
             "scope": 28,
-            "src": "355:133:0",
+            "src": "357:135:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
         "scope": 29,
-        "src": "25:467:0"
+        "src": "24:472:0"
       }
     ],
-    "src": "1:491:0"
+    "src": "0:496:0"
   },
   "legacyAST": {
     "absolutePath": "/home/rpqb-desk-003/Ethreum-project/contracts/SmartCurrency.sol",
@@ -421,7 +421,7 @@
           ".6"
         ],
         "nodeType": "PragmaDirective",
-        "src": "1:23:0"
+        "src": "0:23:0"
       },
       {
         "baseContracts": [],
@@ -446,7 +446,7 @@
                 "name": "file",
                 "nodeType": "VariableDeclaration",
                 "scope": 4,
-                "src": "168:11:0",
+                "src": "167:11:0",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -457,7 +457,7 @@
                   "id": 2,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "168:6:0",
+                  "src": "167:6:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string storage pointer"
@@ -470,7 +470,7 @@
             "name": "DocumentStruct",
             "nodeType": "StructDefinition",
             "scope": 28,
-            "src": "76:111:0",
+            "src": "75:114:0",
             "visibility": "public"
           },
           {
@@ -479,7 +479,7 @@
             "name": "documentStructs",
             "nodeType": "VariableDeclaration",
             "scope": 28,
-            "src": "267:57:0",
+            "src": "269:57:0",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -492,14 +492,14 @@
                 "id": 5,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
-                "src": "275:7:0",
+                "src": "277:7:0",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes32",
                   "typeString": "bytes32"
                 }
               },
               "nodeType": "Mapping",
-              "src": "267:34:0",
+              "src": "269:34:0",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_DocumentStruct_$4_storage_$",
                 "typeString": "mapping(bytes32 => struct SmartCurrency.DocumentStruct storage ref)"
@@ -510,7 +510,7 @@
                 "name": "DocumentStruct",
                 "nodeType": "UserDefinedTypeName",
                 "referencedDeclaration": 4,
-                "src": "286:14:0",
+                "src": "288:14:0",
                 "typeDescriptions": {
                   "typeIdentifier": "t_struct$_DocumentStruct_$4_storage_ptr",
                   "typeString": "struct SmartCurrency.DocumentStruct storage pointer"
@@ -524,7 +524,7 @@
             "body": {
               "id": 26,
               "nodeType": "Block",
-              "src": "427:61:0",
+              "src": "431:61:0",
               "statements": [
                 {
                   "expression": {
@@ -545,7 +545,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 8,
-                          "src": "431:15:0",
+                          "src": "435:15:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_DocumentStruct_$4_storage_$",
                             "typeString": "mapping(bytes32 => struct SmartCurrency.DocumentStruct storage ref)"
@@ -555,11 +555,11 @@
                         "indexExpression": {
                           "argumentTypes": null,
                           "id": 18,
-                          "name": "Key",
+                          "name": "key",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 10,
-                          "src": "447:3:0",
+                          "src": "451:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bytes32",
                             "typeString": "bytes32"
@@ -570,7 +570,7 @@
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "IndexAccess",
-                        "src": "431:20:0",
+                        "src": "435:20:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_struct$_DocumentStruct_$4_storage",
                           "typeString": "struct SmartCurrency.DocumentStruct storage ref"
@@ -584,7 +584,7 @@
                       "memberName": "file",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 3,
-                      "src": "431:25:0",
+                      "src": "435:25:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
                         "typeString": "string storage ref"
@@ -599,13 +599,13 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 12,
-                      "src": "460:4:0",
+                      "src": "464:4:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
                         "typeString": "string memory"
                       }
                     },
-                    "src": "431:33:0",
+                    "src": "435:33:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage",
                       "typeString": "string storage ref"
@@ -613,7 +613,7 @@
                   },
                   "id": 23,
                   "nodeType": "ExpressionStatement",
-                  "src": "431:33:0"
+                  "src": "435:33:0"
                 },
                 {
                   "expression": {
@@ -626,7 +626,7 @@
                     "kind": "bool",
                     "lValueRequested": false,
                     "nodeType": "Literal",
-                    "src": "480:4:0",
+                    "src": "484:4:0",
                     "subdenomination": null,
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
@@ -637,7 +637,7 @@
                   "functionReturnParameters": 16,
                   "id": 25,
                   "nodeType": "Return",
-                  "src": "473:11:0"
+                  "src": "477:11:0"
                 }
               ]
             },
@@ -655,10 +655,10 @@
                 {
                   "constant": false,
                   "id": 10,
-                  "name": "Key",
+                  "name": "key",
                   "nodeType": "VariableDeclaration",
                   "scope": 27,
-                  "src": "378:11:0",
+                  "src": "381:11:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -669,7 +669,7 @@
                     "id": 9,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "378:7:0",
+                    "src": "381:7:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -684,7 +684,7 @@
                   "name": "file",
                   "nodeType": "VariableDeclaration",
                   "scope": 27,
-                  "src": "391:11:0",
+                  "src": "395:11:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -695,7 +695,7 @@
                     "id": 11,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "391:6:0",
+                    "src": "395:6:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string storage pointer"
@@ -705,7 +705,7 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "377:26:0"
+              "src": "379:28:0"
             },
             "payable": false,
             "returnParameters": {
@@ -718,7 +718,7 @@
                   "name": "success",
                   "nodeType": "VariableDeclaration",
                   "scope": 27,
-                  "src": "413:12:0",
+                  "src": "417:12:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -729,7 +729,7 @@
                     "id": 14,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "413:4:0",
+                    "src": "417:4:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -739,20 +739,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "412:14:0"
+              "src": "416:14:0"
             },
             "scope": 28,
-            "src": "355:133:0",
+            "src": "357:135:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
         "scope": 29,
-        "src": "25:467:0"
+        "src": "24:472:0"
       }
     ],
-    "src": "1:491:0"
+    "src": "0:496:0"
   },
   "compiler": {
     "name": "solc",
@@ -806,8 +806,14 @@
       "links": {},
       "address": "0x1e6b8aa077e4060aac376a558b00b258faf5bbe4",
       "transactionHash": "0xd7b792899f6f3bdf2b73986a83bf68cb11a008cc99404648f620d080f3d07ed8"
+    },
+    "1522814289048": {
+      "events": {},
+      "links": {},
+      "address": "0xa34a1e3046d4d9ad36ebc9bf11e980421338b77a",
+      "transactionHash": "0xf0d2d87fe77d0f3758af981e60fefaa74c32060a92d57294aa7151756bd25ac7"
     }
   },
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-04-03T04:27:22.461Z"
+  "updatedAt": "2018-04-04T14:41:46.066Z"
 }

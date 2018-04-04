@@ -79,10 +79,7 @@ window.App = {
         console.log("address...>>>" +key);
         var URL =  document.getElementById('URL').value;
         console.log("address...>>>" +URL);
-            var fileInput = document.getElementById('fileInput').files;
-            console.log(fileInput)
-            var fileDisplayArea = document.getElementById('fileDisplayArea').value;
-            console.log(fileDisplayArea)
+            
         var fileInput="/home/rpqb-desk-003/Ethreum-project/app/image/ven.jpg"
         fileInput.addEventListener('change', function(e) {
                 var file = fileInput;
