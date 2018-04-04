@@ -94,6 +94,7 @@ label{
 }
 input {
  display: inline-block;
+ color:black;
 }
 textarea {
    margin: 0;
@@ -196,8 +197,9 @@ input[type=password]:focus {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    color: white;
+    color: black;
 }
+
 .container2 {
     position: relative;
    text-align: center;
@@ -256,8 +258,18 @@ input[type=file] {
     text-align:left;
 
  }
+<<<<<<< HEAD
  input[type="text"] {
     margin: 0 auto;
     /* text-align: center; */
     color: black;
+=======
+ .input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+    margin-top: 50px;
+    margin-left: 214px;
+    background-color: skyblue;
+>>>>>>> 1d369d9c0338826e7eb795f7941c44e8839a5fa5
 }

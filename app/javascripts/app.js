@@ -1,6 +1,5 @@
 import "../stylesheet/app.css";
 import BigNumber from 'bignumber.js';
-
 import cron from '../../node_modules/cron'
 // Import libraries we need.
 import {
@@ -22,7 +21,6 @@ var SmartCurrency = contract(smartcurrency_artifacts);
 var accounts;
 // var account;
 var account;
-
 // var test = [];
 // var columnDefs = [
 //     {headerName: "AccountNumber", field: "accountnumber"},

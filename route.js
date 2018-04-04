@@ -180,15 +180,11 @@ module.exports = router => {
    
    
 
-router.post('/registerUser', cors(), (req, res) => { 
-    console.log("UI",req.body);
 
     const firstname = req.body.firstname;
     console.log(firstname);
     const lastname = req.body.lastname;
     console.log(lastname);
-    const phonenumber = parseInt(req.body.phonenumber);
-    console.log(phonenumber);
     const email = req.body.email;
     console.log(email);
     const password = req.body.password;
@@ -197,6 +193,15 @@ router.post('/registerUser', cors(), (req, res) => {
     console.log(retypepassword);
     const usertype = req.body.usertype;
     console.log(usertype);
+    const userObject = req.body.userObject;
+    console.log( "phone",userObject);
+    // var phonetosend = userObject.phone;
+    // var otp = "";
+    // var possible = "0123456789";
+    // for (var i = 0; i < 4; i++)
+    //     otp += possible.charAt(Math.floor(Math.random() * possible.length));
+    // console.log("otp" + otp);
+     var encodedMail = new Buffer(req.body.email).toString('base64');
     
     if (!firstname || !lastname || !phonenumber || !email || !password || !retypepassword || !usertype) {
         res
@@ -253,6 +258,59 @@ router.post('/login', cors(), (req, res) => {
             status: err.status
         }));
 
+}); 
+
+router.get("/email/verify", cors(), (req, res, next) => {
+    var status;
+    var querymail = req.query.mail;
+    var email = req.query.email;
+    console.log("URL: " + querymail);
+    console.log("email: " + email);
+    User
+        .getUser(email)
+        .then(result => {
+            var minutes1 = new Date(result.usr[0]._doc.created_at).getMinutes();
+            console.log("minutes1" + minutes1);
+            var minutes2 = new Date().getMinutes();
+            console.log("minutes2" + minutes2);
+            var diffinminutes = minutes2 - minutes1;
+            if (diffinminutes > 10) {
+                deleteuser
+                    .deleteuser(email)
+                    .then(result => {
+                        res.send({
+                            status: 201,
+                            message: 'your email link has been expired please register again'
+                        });
+                    })
+                    .catch(err => res.status(err.status).json({
+                        message: err.message
+                    }));
+
+            } else {
+                verifyemail
+                    .emailverification(querymail)
+                    .then(result => {
+                        var status = result.usr.status
+                        if (status.length == 2) {
+                            res.send({
+                                "status": true,
+                                "message": "registration successful"
+                            });
+                        } else {
+
+                            res.send({
+                                "status": false,
+                                "message": "please verify mobile no too"
+                            });
+                        }
+
+                    })
+                    .catch(err => res.status(err.status).json({
+                        message: err.message
+                    }));
+            }
+        });
 });
 
-}
+

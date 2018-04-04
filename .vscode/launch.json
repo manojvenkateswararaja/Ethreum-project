@@ -4,12 +4,19 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+<<<<<<< HEAD
         
+=======
+>>>>>>> 1d369d9c0338826e7eb795f7941c44e8839a5fa5
         {
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
+<<<<<<< HEAD
             "program": "${workspaceFolder}/app.js"
+=======
+            "program": "${workspaceFolder}/models/registerether.js"
+>>>>>>> 1d369d9c0338826e7eb795f7941c44e8839a5fa5
         }
     ]
 }

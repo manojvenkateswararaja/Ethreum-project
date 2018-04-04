@@ -13,20 +13,25 @@ const registerpageSchema = mongoose.Schema({
         type: String,
         unique: true
     },
+    otp: Number,
+    userObject: Object,
     password: String,
     retypepassword: String,
     usertype:  String,
+    encodedMail: String,
+    status: Array,
+    count: Number
+    
     
      
 });
 
 
 mongoose.Promise = global.Promise;
-//mongoose.connect('mongodb://localhost:27017/digitalId', { useMongoClient: true });
+mongoose.connect('mongodb://localhost:27017/digitalId', { useMongoClient: true });
 
-mongoose.connect('mongodb://harini:Harini!96@ds119406.mlab.com:19406/mortgage', {
-    useMongoClient: true
-});
+//mongoose.connect('mongodb://harini:Harini!96@ds119406.mlab.com:19406/mortgage', {
+    
 
 
 

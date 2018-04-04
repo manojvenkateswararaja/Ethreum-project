@@ -29,13 +29,14 @@
         console.log("address...>>>" +fname);
         var lname =  document.getElementById("lname").value;
         console.log("address...>>>" +lname);
+        var userObject =(document.getElementById("userObject").value);
+        console.log("lolphone123----"+userObject)
         var email = document.getElementById("email").value;
         console.log("lol----"+email)
         var pass = document.getElementById("pass").value;
         console.log("lol----"+pass)
         var repass =(document.getElementById("repass").value);
         console.log("lol----"+repass)
-
         var usertype = document.getElementById("usertype").value;
         console.log("Coinreciever:------>" + usertype);
         var register = {
@@ -43,11 +44,12 @@
         
         "fname" : fname, 
         "lname" : lname, 
+        "userObject":userObject,
         "email" : email,
         "pass" : pass, 
         "repass" : repass,
-        "usertype" : usertype,
-        "phonenumber":"9715278474"
+        "usertype" : usertype
+        
         }
         
      $.ajax({
@@ -79,25 +81,61 @@
        </div> -->
        <br>
        <br>
-       <h2><center>Registration</center></h2>
-       <div class="containerreg">
+       <h2> <center>Registration </center> </h2>
+       <div class="row">
+        <div class="col-lg-12">
+            <div class="input-group">
+                    <div class = "group">
+                <h3> <center> Organisation Details </center></h3>
+                <label>FirstName:</label> 
+                <!-- <input type="text" value=""  />&nbsp;  -->
+                <input type="text" style="width:150px" text-align: "left"; id="fname">
+                <label>LastName:</label>
+                <input type="text" style="width:150px" text-align: "left"; id="lname"> <br><br>
+                <label>ID:</label>&nbsp; 
+                <input type="text" style="width:150px" text-align: "left"; name="password"id="usertype"> <br> <br>
+               
+                </div>
+                </div>
+
+                <div class="input-group">
+                    <div class = "group">
+                <h3><center>Personal Details</center></h3>
+                <label>Email:</label>&nbsp;
+                <input type="text" style="width:150px" text-align: "left"; name="UserName"id="email"> 
+                <label>phonenumber:</label>&nbsp;
+                <input type="text" style="width:150px" text-align: "left"; name="UserName"id="userObject"> <br> <br>
+                <label>password:</label>&nbsp;
+                <input type="password" style="width:150px" text-align: "left"; name="password"id="pass"> 
+                <label>confirm password:</label>&nbsp;
+                <input type="password" style="width:150px" text-align: "left"; name="password"id="repass"> <br> <br>
+                </div> <br>
+            </div>
+            </div>
+        </div> <br>
+       <!-- <div class="containerreg">
           
         <br> <br>
         <br>
                <form>
+
+                   
+
                        <label>FirstName:</label>
                        <input type="text" style="width:150px" text-align: "left"; name="UserName"id="fname"> <br> <br>
                        <label>LastName:</label>
                        <input type="text" style="width:150px" text-align: "left"; name="UserName"id="lname"> <br> <br>
+                       <label>phonenumber:</label>
+                       <input type="text" style="width:150px" text-align: "left"; name="UserName"id="phonenumber"> <br> <br>
                        <label>Email:</label>
                        <input type="text" style="width:150px" text-align: "left"; name="UserName"id="email"> <br> <br>
                        <label >Password:</label>
                        <input type="password" style="width:150px" text-align: "left"; name="password"id="pass"> <br><br>
                        <label>RetypePassword:</label>
                        <input type="password" style="width:150px" text-align: "left"; name="password"id="repass"> <br> <br>
-                       <label>Usertype:</label>
+                       <label>ID:</label>
                        <input type="text" style="width:150px" text-align: "left"; name="password"id="usertype"> <br> <br>
-                     </form> <br>
+                     </form> <br> -->
 
                      <!-- <form action="dashboard1.html"> -->
                       <!-- <input type="submit" value="Login"> -->
@@ -107,7 +145,7 @@
         <!-- <a href="dashboard1.html"><button>Submit</button></a> 
        <button class="button" id="send" onclick="App.myFunction()">Submit</button>
                                        <br> -->
-                                       <button type="button" onclick="handler()">Submit</button>
+                          <button type="button" onclick="handler()">Submit</button>
     </div>
    </div>
    </body>
